@@ -57,10 +57,9 @@ module.exports = function(grunt) {
 
             var pattern = /url\s*\(['"]*([^\'")]+)['"]*\)/;
 
-            var excludepattern = pattern + '(?!\\s*?\\/\\*\\s*?noembed\\s*?\\*\\/)';
+            var excludepattern = new RegExp('url\\(["\']?([^"\'\\(\\)]+?)["\']?\\)[};,!\\s](?!\\s*?\\/\\*\\s*?noembed\\s*?\\*\\/)', 'g');
             var match = excludepattern.exec(value);
             if (match) {
-
 
               var dir = src.toString().substring( 0, src.toString().lastIndexOf( "/" ) + 1);
               var file = match[1];
