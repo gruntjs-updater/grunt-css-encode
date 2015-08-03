@@ -57,7 +57,8 @@ module.exports = function(grunt) {
 
             var pattern = /url\s*\(['"]*([^\'")]+)['"]*\)/;
 
-            var match = pattern.exec(value);
+            var excludepattern = pattern + '(?!\\s*?\\/\\*\\s*?noembed\\s*?\\*\\/)';
+            var match = excludepattern.exec(value);
             if (match) {
 
 
