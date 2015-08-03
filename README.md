@@ -2,6 +2,8 @@
 
 > convert file-uris to data-uris in css-files
 
+This plugin is a fork of https://www.npmjs.com/package/grunt-css-datauri, have added extra code to skip files if /* noembed */ is added after the url('...').
+
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
 
